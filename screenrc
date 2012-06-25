@@ -1,0 +1,21 @@
+# --                                                            # {{{1
+#
+# File        : cfg-sodium/screenrc
+# Maintainer  : Felix C. Stegerman <flx@obfusk.net>
+# Date        : 2012-03-11
+#
+# Copyright   : Copyright (C) 2012  Felix C. Stegerman
+# Licence     : GPLv2
+#
+# --                                                            # }}}1
+
+startup_message off
+defscrollback 10000
+
+# TODO {
+
+hardstatus alwayslastline "%-Lw%50L>%{=r}%n*%f %t%?(%u)%?%{-}%+Lw %=%<"
+
+# } TODO
+
+# vim: set tw=70 sw=2 sts=2 et fdm=marker :
