@@ -1,20 +1,52 @@
 #!/bin/bash
 
-function die () { echo "error: $1" >&2; exit 1; }
+function die () { echo "${2:-error}: $1" >&2; exit 1; }
 
-if [ -n "$MGIT_DIRS" ]; then
-  ds=( $MGIT_DIRS )
-elif [ "$1" == STDIN ]; then
-  ds=() ; shift
-  while read -r; do ds+=( "$REPLY" ); done
-elif [ "$1" == DIR ]; then
-  ds=( "$2" ) ; shift 2
-elif [ "$1" == DIRS ]; then
-  ds=() ; d="$2" ; shift 2
-  for x in "$d"/*; do [ -e "$x"/.git ] && ds+=( "$x" ); done
-else
-  ds=( $( find . -name '.git' | sed 's!/\.git$!!' | sort ) )
-fi
+usage='mgit { DIR <dir> | DIRS <dir> | ENV | FIND <dir> | STDIN |'
+usage+=$'\n''              VALS <dir(s)> END }'
+usage+=$'\n''            <command> [ <arg(s)> ]'
+
+# --
+
+case "$1" in
+  D|DIR)
+    ds=( "$2" ) ; shift 2
+  ;;
+
+  S|DIRS)
+    ds=() ; d="$2" ; shift 2
+    for x in "$d"/*; do [ -e "$x"/.git ] && ds+=( "$x" ); done
+  ;;
+
+  E|ENV)
+    ds=( $MGIT_DIRS ) ; shift
+  ;;
+
+  F|FIND)
+    ds=() ; d="$2" ; shift 2
+    while read -r; do ds+=( "$REPLY" ); done \
+      < <( find "$d" -name '.git' | sed 's!/\.git$!!' | sort )
+  ;;
+
+  I|STDIN)
+    ds=() ; shift ; while read -r; do ds+=( "$REPLY" ); done
+  ;;
+
+  V|VALS)
+    ds=() ; shift
+    while [ "$1" != END ]; do ds+=( "$1" ); shift; done ; shift
+  ;;
+
+  *)
+    die "$usage" usage
+  ;;
+esac
+
+# --
+
+[ "$#" -eq 0 ] && die "$usage" usage
+
+# --
 
 for d in "${ds[@]}"; do
   echo "==> $d <=="
