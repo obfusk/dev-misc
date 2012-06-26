@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# --                                                            # {{{1
+#
+# File        : dev-scripts/mgit
+# Maintainer  : Felix C. Stegerman <flx@obfusk.net>
+# Date        : 2012-06-26
+#
+# Copyright   : Copyright (C) 2012  Felix C. Stegerman
+# Licence     : GPLv2
+#
+# --                                                            # }}}1
+
 function die () { echo "${2:-error}: $1" >&2; exit 1; }
 
 usage='mgit { DIR <dir> | DIRS <dir> | ENV | FIND <dir> | STDIN |'
@@ -56,4 +67,4 @@ for d in "${ds[@]}"; do
   echo
 done
 
-# --
+# vim: set tw=70 sw=2 sts=2 et fdm=marker :
