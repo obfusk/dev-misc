@@ -13,8 +13,8 @@
 
 function die () { echo "${2:-error}: $1" >&2; exit 1; }
 
-usage='mgit { DIR <dir> | DIRS <dir> | ENV | FIND <dir> | STDIN |'
-usage+=$'\n''              VALS <dir(s)> END }'
+usage='mgit { DIR <dir> | DIRS <dir(s)> END | ENV | FIND <dir> |'
+usage+=$'\n''              STDIN | SUB <dir> }'
 usage+=$'\n''            <command> [ <arg(s)> ]'
 
 # --
@@ -24,9 +24,9 @@ case "$1" in
     ds=( "$2" ) ; shift 2
   ;;
 
-  S|DIRS)
-    ds=() ; d="$2" ; shift 2
-    for x in "$d"/*; do [ -e "$x"/.git ] && ds+=( "$x" ); done
+  R|DIRS)
+    ds=() ; shift
+    while [ "$1" != END ]; do ds+=( "$1" ); shift; done ; shift
   ;;
 
   E|ENV)
@@ -43,9 +43,9 @@ case "$1" in
     ds=() ; shift ; while read -r; do ds+=( "$REPLY" ); done
   ;;
 
-  V|VALS)
-    ds=() ; shift
-    while [ "$1" != END ]; do ds+=( "$1" ); shift; done ; shift
+  S|SUB)
+    ds=() ; d="$2" ; shift 2
+    for x in "$d"/*; do [ -e "$x"/.git ] && ds+=( "$x" ); done
   ;;
 
   *)
