@@ -1,8 +1,8 @@
 " --                                                            # {{{1
 "
-" File        : cfg-sodium/vimrc
+" File        : cfg/vimrc
 " Maintainer  : Felix C. Stegerman <flx@obfusk.net>
-" Date        : 2012-06-25
+" Date        : 2012-12-27
 "
 " Copyright   : Copyright (C) 2012  Felix C. Stegerman
 " Licence     : GPLv2
@@ -16,7 +16,12 @@
 
 " --
 
-set rtp+=~/opt/src/vimclojure       " before filetype !!!
+filetype off
+
+" before filetype !!!
+set rtp+=~/opt/src/vimclojure,
+        \~/opt/src/vim-coffee-script
+
 let vimclojure#ParenRainbow = 1
 
 au BufNewFile,BufRead *.cljs,*.fnjs,*.fnjm set filetype=clojure
