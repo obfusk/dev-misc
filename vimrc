@@ -2,7 +2,7 @@
 "
 " File        : cfg/vimrc
 " Maintainer  : Felix C. Stegerman <flx@obfusk.net>
-" Date        : 2013-10-13
+" Date        : 2013-11-13
 "
 " Copyright   : Copyright (C) 2012  Felix C. Stegerman
 " Licence     : GPLv2
@@ -21,9 +21,10 @@ filetype off
 " before filetype !!!
 set rtp+=~/opt/src/vimclojure,
         \~/opt/src/vim-coffee-script,
+        \~/opt/src/vim-markdown,
+        \~/opt/src/vim-niji,
         \~/opt/src/vim-racket,
-        \~/opt/src/vim-scala,
-        \~/opt/src/vim-niji
+        \~/opt/src/vim-scala
 
 let vimclojure#ParenRainbow = 1
 
