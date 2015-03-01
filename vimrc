@@ -2,7 +2,7 @@
 "
 " File        : cfg/vimrc
 " Maintainer  : Felix C. Stegerman <flx@obfusk.net>
-" Date        : 2014-08-08
+" Date        : 2015-03-01
 "
 " Copyright   : Copyright (C) 2012  Felix C. Stegerman
 " Licence     : GPLv3+
@@ -34,6 +34,8 @@ au BufNewFile,BufRead *.cljs,*.fnjs,*.fnjm set filetype=clojure
 filetype plugin on
 filetype indent off
 
+au BufNewFile,BufRead *.py setlocal sw=2 sts=2 " 2 spaces for python
+
 " --
 
 " from OS X vimrc (example) {
@@ -49,7 +51,7 @@ set ai hi=1000 sc
 
 syn on
 
-set bg=dark bk nu ru
+set bg=dark bk nu ru cc=71
 set tw=70 sw=2 sts=2 et fdm=marker
 
 let loaded_matchparen = 1
