@@ -35,7 +35,7 @@ au BufNewFile,BufRead *.cljs,*.fnjs,*.fnjm set filetype=clojure
 filetype plugin on
 filetype indent off
 
-au BufNewFile,BufRead *.py setlocal sw=2 sts=2 " 2 spaces for python
+au BufNewFile,BufRead *.py,*.factor setlocal sw=2 sts=2 " 2 spaces!
 
 " --
 
