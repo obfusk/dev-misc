@@ -2,7 +2,7 @@
 "
 " File        : cfg/vimrc
 " Maintainer  : Felix C. Stegerman <flx@obfusk.net>
-" Date        : 2015-03-01
+" Date        : 2015-09-05
 "
 " Copyright   : Copyright (C) 2012  Felix C. Stegerman
 " Licence     : GPLv3+
@@ -21,6 +21,7 @@ filetype off
 " before filetype !!!
 set rtp+=~/opt/src/vimclojure,
         \~/opt/src/vim-coffee-script,
+        \~/opt/src/vim-factor,
         \~/opt/src/vim-ls,
         \~/opt/src/vim-markdown,
         \~/opt/src/vim-niji,
