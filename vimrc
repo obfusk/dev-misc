@@ -2,9 +2,9 @@
 "
 " File        : cfg/vimrc
 " Maintainer  : Felix C. Stegerman <flx@obfusk.net>
-" Date        : 2015-09-05
+" Date        : 2020-06-22
 "
-" Copyright   : Copyright (C) 2012  Felix C. Stegerman
+" Copyright   : Copyright (C) 2020  Felix C. Stegerman
 " Licence     : GPLv3+
 "
 " --                                                            # }}}1
@@ -36,6 +36,7 @@ filetype plugin on
 filetype indent off
 
 let g:python_recommended_style = 0
+let g:rust_recommended_style = 0
 au BufNewFile,BufRead *.factor setlocal sw=2 sts=2 " 2 spaces!
 
 " --
