@@ -2,9 +2,9 @@
 "
 " File        : cfg/vimrc
 " Maintainer  : Felix C. Stegerman <flx@obfusk.net>
-" Date        : 2020-06-22
+" Date        : 2021-09-12
 "
-" Copyright   : Copyright (C) 2020  Felix C. Stegerman
+" Copyright   : Copyright (C) 2021  Felix C. Stegerman
 " Licence     : GPLv3+
 "
 " --                                                            # }}}1
@@ -22,6 +22,7 @@ filetype off
 set rtp+=~/opt/src/vimclojure,
         \~/opt/src/vim-coffee-script,
         \~/opt/src/vim-factor,
+        \~/opt/src/vim-kotlin,
         \~/opt/src/vim-ls,
         \~/opt/src/vim-markdown,
         \~/opt/src/vim-niji,
