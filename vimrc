@@ -35,7 +35,7 @@ au BufNewFile,BufRead *.cljs,*.fnjs,*.fnjm set filetype=clojure
 filetype plugin on
 filetype indent off
 
-let g:python_recommended_style = 0
+" let g:python_recommended_style = 0
 let g:rust_recommended_style = 0
 au BufNewFile,BufRead *.factor setlocal sw=2 sts=2 " 2 spaces!
 
@@ -54,8 +54,8 @@ set ai hi=1000 sc
 
 syn on
 
-set bg=dark bk nu ru cc=71
-set tw=70 sw=2 sts=2 et fdm=marker
+set bg=dark bk nu ru " cc=71
+set tw=80 sw=2 sts=2 et fdm=marker
 
 let loaded_matchparen = 1
 
@@ -68,7 +68,7 @@ set fdc=4 ls=2 wmnu
 " set cul lbr more si lcs=... t_Co=16   " ???
 
 highlight OverLen cterm=reverse
-match OverLen /\%81v.*/                 " reverse @ >= 80 columns
+" match OverLen /\%81v.*/               " reverse @ >= 80 columns
 
 set dictionary=/usr/share/dict/words    " ???
 
