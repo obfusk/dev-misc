@@ -1,10 +1,9 @@
 " --                                                            # {{{1
 "
 " File        : cfg/vimrc
-" Maintainer  : Felix C. Stegerman <flx@obfusk.net>
-" Date        : 2021-09-12
+" Maintainer  : Fay Stegerman <flx@obfusk.net>
 "
-" Copyright   : Copyright (C) 2021  Felix C. Stegerman
+" Copyright   : Copyright (C) 2024  Fay Stegerman
 " Licence     : GPLv3+
 "
 " --                                                            # }}}1
